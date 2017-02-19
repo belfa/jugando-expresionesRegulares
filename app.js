@@ -1,3 +1,22 @@
+console.log('Coincidencia y grupos mediante exec y match');
+
+console.log("Hasta 1994".match(/\d+/));
+
+var expresionExec = /\d+/.exec('Del año 1984');
+
+console.log(expresionExec);
+
+console.log('Agrupar patrones en subexpresiones');
+
+var expresionAgrupar = /Wooo+(hoo+)+/i;
+//Woohooooooooooo!
+console.log(expresionAgrupar.test('Wooooooohoohoooohooohooooo'));
+
+//Sin case sensitive
+var expresionSinCaseSensitive = /Hola Mundo/i;
+console.log('Sin case sensitive');
+console.log(expresionSinCaseSensitive.test('HOLA Mundo'));
+
 //Contador de Patrones
 var expresionContadora = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2,}/;
 
@@ -8,9 +27,6 @@ var expresionPatronesOpcionales = /Hola Mun?do/;
 
 console.log(expresionPatronesOpcionales.test('Hola Mundo'));
 console.log(expresionPatronesOpcionales.test('Hola Mudo'));
-
-
-
 
 //Patrones con repetición
 var expresionRepeticion1 = /\d*/;
