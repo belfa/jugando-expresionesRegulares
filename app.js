@@ -1,3 +1,31 @@
+console.log('Patrones al inicio y al final de una expresion');
+
+var expresionInicio = /^Any/;
+
+console.log(expresionInicio.test('Any app that can be imagined can be made in Javascript'));
+
+var expresionFinal = /Javascript$/;
+
+console.log(expresionFinal.test('Any app that can be imagined can be made in Javascript'));
+
+var expresionInicioFinal = /^Any|Javascript$/;
+console.log(expresionInicioFinal.test('Any app that can be imagined can be made in Javascript'));
+
+console.log('Uso de patrones opcionales');
+
+var patronesOpcionales = /pollo|res/;
+
+console.log(patronesOpcionales.test('El cliente pidio pollo')); //true
+console.log(patronesOpcionales.test('El cliente pidio res')); //true
+console.log(patronesOpcionales.test('El cliente pidio pescado')); //false
+
+console.log('Limitar palabras y cadenas de texto en una expresion regular');
+
+var limitarPalabra = /\bcat\b/;
+
+console.log(limitarPalabra.test("cat")); //true
+console.log(limitarPalabra.test("categoria"));//false
+
 console.log('Coincidencia y grupos mediante exec y match');
 
 console.log("Hasta 1994".match(/\d+/));
