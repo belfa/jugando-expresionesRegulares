@@ -1,3 +1,49 @@
+console.log('Ciclos y evaluaciones');
+
+var mensaje = "Llegaban por montones, primero 10, después 20, después 35 y se iban duplicando hasta llegara a 1000";
+
+var patron  = /\b(\d+)\b/g;
+
+var match;
+
+while(match=patron.exec(mensaje)){
+    console.log(match);
+    console.log("Se encontró ",match[1], " en la posición ", match.index);
+}
+
+console.log('Propiedad LastIndex');
+
+var expresion = /y/g;//La propiedad lastIndex es global sobre una busqueda en una cadena,
+// necesita el modificador /g para tener sentido
+
+console.log(expresion.lastIndex);//vale 0 porque aun no hemos buscado la expresion en ningún sitio
+
+expresion.lastIndex = 6; //modificador
+
+var coincidencia = expresion.exec('sibr yfx sibr yfx');
+console.log(coincidencia);
+console.log(expresion.lastIndex);
+
+otraExpresion = /\d/g;
+
+console.log(otraExpresion.exec('Pedí 4 hamburguesas y 1 agua'));//lastIndex = 6
+console.log(otraExpresion.exec('Pedí 4 hamburguesas y 1 agua'));//lastIndex = 16
+console.log(otraExpresion.exec('Pedí 4 hamburguesas y 1 agua'));//lastIndex = 0
+console.log('O...'+otraExpresion.lastIndex);
+
+console.log('Search');
+
+var mensaje = 'Esta historia continuará ....'
+
+console.log(mensaje.search(/\S/));
+
+console.log('Replace');
+
+var mensaje = 'El cliente pidió sushi y comio su sushi';
+
+//La 'g' hace que el remplazo sea global dentro del string, sino lo haría sólo con el primero
+console.log(mensaje.replace(/sushi/g, 'tacos'));
+
 console.log('Patrones al inicio y al final de una expresion');
 
 var expresionInicio = /^Any/;
